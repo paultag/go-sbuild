@@ -38,8 +38,11 @@ func (sbuild *Sbuild) AddFlag(flag string) {
 	sbuild.args = append(sbuild.args, flag)
 }
 
-func (sbuild *Sbuild) AddArgument(key, value string) {
-	sbuild.args = append(sbuild.args, fmt.Sprintf("--%s=%s", key, value))
+func (sbuild *Sbuild) AddArgument(key string, value *string) {
+	if value == nil {
+		return sbuild.AddFlag("--" + key)
+	}
+	sbuild.args = append(sbuild.args, fmt.Sprintf("--%s=%s", key, *value))
 }
 
 func (sbuild *Sbuild) BuildCommand(dsc string) (*exec.Cmd, error) {
