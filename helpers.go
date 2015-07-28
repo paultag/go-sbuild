@@ -48,11 +48,11 @@ func (sbuild *Sbuild) Arch(arch string) {
 	sbuild.AddArgument("arch", arch)
 }
 
-func (sbuild *Sbuild) Host(arch string) {
+func (sbuild *Sbuild) HostArch(arch string) {
 	sbuild.AddArgument("host", arch)
 }
 
-func (sbuild *Sbuild) Build(arch string) {
+func (sbuild *Sbuild) BuildArch(arch string) {
 	sbuild.AddArgument("build", arch)
 }
 
