@@ -13,8 +13,8 @@ import (
 
 func main() {
 	sbuild := sbuild.NewSbuild("unstable", "unstable")
-	sbuild.AddFlag("-v")
-	sbuild.AddFlag("-A")
+	sbuild.Verbose()
+	sbuild.ArchAll()
 	cmd, err := sbuild.BuildCommand("/some/path/somepackage.dsc")
 	if err != nil {
 		fmt.Printf("%s\n", err)
