@@ -56,4 +56,8 @@ func (sbuild *Sbuild) BuildArch(arch string) {
 	sbuild.AddArgument("build", arch)
 }
 
+func (sbuild *Sbuild) BuildDepResolver(resolver string) {
+	sbuild.AddArgument("build-dep-resolver", resolver)
+}
+
 // vim: foldmethod=marker
